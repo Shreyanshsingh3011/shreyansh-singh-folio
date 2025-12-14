@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(200_80%_55%/0.08),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,hsl(180_70%_45%/0.05),transparent_50%)]" />
@@ -12,64 +12,81 @@ export function HeroSection() {
       {/* Animated Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border)/0.3)_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border)/0.3)_1px,transparent_1px)] bg-[size:80px_80px] [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]" />
 
-      <div className="container-narrow relative z-10 text-center pt-24">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8"
-        >
-          <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm text-muted-foreground">Founder of Third AI</span>
-        </motion.div>
+      <div className="container-wide relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
+              <MapPin className="w-4 h-4 text-primary" />
+              <span className="text-sm text-muted-foreground">India • Global</span>
+            </div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight mb-6"
-        >
-          Building Intelligent Systems for a{" "}
-          <span className="text-gradient">Data-Driven</span> and{" "}
-          <span className="text-gradient">Sustainable</span> World
-        </motion.h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6">
+              Hi, I'm{" "}
+              <span className="text-gradient">Shreyansh Singh</span>
+            </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-4"
-        >
-          A universal Agentic AI platform simplifying data management, automation, 
-          and decision-making across industries.
-        </motion.p>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-4">
+              Entrepreneur • Innovator • Technologist
+            </p>
 
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="text-base text-muted-foreground/80 max-w-2xl mx-auto mb-10"
-        >
-          Inspired by the belief that technology and clean energy should be 
-          accessible, efficient, and impactful for everyone.
-        </motion.p>
+            <p className="text-lg text-muted-foreground/80 max-w-xl mb-8">
+              Building intelligent systems at the intersection of AI, enterprise software, 
+              and clean energy. Founder of Third AI — making data management effortless for everyone.
+            </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <Button variant="hero" size="xl" asChild>
-            <a href="#third-ai">
-              Explore Third AI
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-          </Button>
-          <Button variant="heroOutline" size="xl" asChild>
-            <a href="#contact">Partner / Invest</a>
-          </Button>
-        </motion.div>
+            <div className="flex flex-col sm:flex-row items-start gap-4">
+              <Button variant="hero" size="xl" asChild>
+                <a href="#projects">
+                  View My Work
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </a>
+              </Button>
+              <Button variant="heroOutline" size="xl" asChild>
+                <a href="#contact">Get in Touch</a>
+              </Button>
+            </div>
+          </motion.div>
+
+          {/* Profile Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative flex justify-center lg:justify-end"
+          >
+            <div className="relative">
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20 rounded-3xl blur-3xl scale-110 animate-glow-pulse" />
+              
+              {/* Profile Container */}
+              <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl glass overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/10" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-8xl md:text-9xl font-bold text-gradient opacity-50">SS</div>
+                    <p className="text-sm text-muted-foreground mt-4">Profile Photo</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="absolute -bottom-4 -left-4 px-4 py-3 rounded-xl glass-strong"
+              >
+                <p className="text-sm font-medium">Founder of Third AI</p>
+                <p className="text-xs text-muted-foreground">Agentic AI Platform</p>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Scroll Indicator */}
         <motion.div

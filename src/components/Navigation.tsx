@@ -4,10 +4,9 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
+  { href: "#projects", label: "Work" },
   { href: "#about", label: "About" },
-  { href: "#third-ai", label: "Third AI" },
-  { href: "#businesses", label: "Businesses" },
-  { href: "#vision", label: "Vision" },
+  { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -34,7 +33,7 @@ export function Navigation() {
     >
       <div className="container-wide flex items-center justify-between">
         <a href="#" className="text-xl font-bold tracking-tight">
-          <span className="text-gradient">SS</span>
+          <span className="text-gradient">Shreyansh</span>
         </a>
 
         {/* Desktop Navigation */}
@@ -49,7 +48,7 @@ export function Navigation() {
             </a>
           ))}
           <Button variant="hero" size="sm" asChild>
-            <a href="#contact">Partner / Invest</a>
+            <a href="#contact">Hire Me</a>
           </Button>
         </nav>
 
@@ -84,7 +83,7 @@ export function Navigation() {
                 </a>
               ))}
               <Button variant="hero" size="default" className="mt-2" asChild>
-                <a href="#contact">Partner / Invest</a>
+                <a href="#contact">Hire Me</a>
               </Button>
             </nav>
           </motion.div>
