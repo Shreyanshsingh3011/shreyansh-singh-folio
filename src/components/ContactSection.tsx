@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send, Linkedin, Mail, ArrowRight } from "lucide-react";
+import { Send, Linkedin, Mail, ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,8 +9,9 @@ import { useToast } from "@/hooks/use-toast";
 
 const socialLinks = [
   { icon: Mail, label: "Personal Email", href: "mailto:shreyansh.singh3011@gmail.com", username: "shreyansh.singh3011@gmail.com" },
-  { icon: Mail, label: "Business Email", href: "mailto:ceo@sthapanatechnologies.com", username: "ceo@sthapanatechnologies.com" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/shreyansh-singh-259773216?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", username: "shreyansh-singh" },
+  { icon: Mail, label: "Business Email", href: "mailto:hi@sthapanatechnologies.com", username: "hi@sthapanatechnologies.com" },
+  { icon: Phone, label: "WhatsApp", href: "https://wa.me/919755957283", username: "+91-9755957283" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/shreyansh-singh-259773216", username: "shreyansh-singh" },
 ];
 
 export function ContactSection() {
