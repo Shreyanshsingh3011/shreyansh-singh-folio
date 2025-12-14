@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Award, Mic, Globe, BookOpen, Heart, Sparkles } from "lucide-react";
+import { Award, Mic, BookOpen, Heart } from "lucide-react";
+import speaking1 from "@/assets/speaking-1.jpg";
+import risingSunConclave from "@/assets/rising-sun-conclave.jpg";
+import leadersGroup from "@/assets/leaders-group.jpg";
+import teamEvent from "@/assets/team-event.jpg";
 
 const milestones = [
   {
@@ -38,12 +42,68 @@ export function JourneySection() {
   return (
     <section id="about" className="section-padding relative" ref={ref}>
       <div className="container-wide relative z-10">
+        {/* Photo Gallery */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="mb-16"
+        >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="col-span-2 row-span-2 rounded-2xl overflow-hidden relative group"
+            >
+              <img 
+                src={risingSunConclave} 
+                alt="Shreyansh speaking at Rising Sun Conclave" 
+                className="w-full h-full object-cover aspect-square md:aspect-auto"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-sm font-medium">Rising Sun Conclave</p>
+                <p className="text-xs text-muted-foreground">Youngest Speaker</p>
+              </div>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="rounded-2xl overflow-hidden"
+            >
+              <img 
+                src={speaking1} 
+                alt="Shreyansh speaking at podium" 
+                className="w-full h-full object-cover aspect-square"
+              />
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="rounded-2xl overflow-hidden"
+            >
+              <img 
+                src={leadersGroup} 
+                alt="Shreyansh with industry leaders" 
+                className="w-full h-full object-cover aspect-square"
+              />
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="col-span-2 rounded-2xl overflow-hidden"
+            >
+              <img 
+                src={teamEvent} 
+                alt="Connect India Japan team" 
+                className="w-full h-48 object-cover object-top"
+              />
+            </motion.div>
+          </div>
+        </motion.div>
+
         <div className="grid lg:grid-cols-2 gap-16">
           {/* About Text */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
               About Me
@@ -78,7 +138,7 @@ export function JourneySection() {
                   key={item.label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                   className="flex items-center gap-3 p-3 rounded-xl glass"
                 >
                   <item.icon className="w-5 h-5 text-primary" />

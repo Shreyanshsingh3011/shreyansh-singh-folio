@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import profileHeadshot from "@/assets/profile-headshot.jpg";
 
 export function HeroSection() {
   return (
@@ -64,14 +65,13 @@ export function HeroSection() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20 rounded-3xl blur-3xl scale-110 animate-glow-pulse" />
               
               {/* Profile Container */}
-              <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl glass overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/10" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-8xl md:text-9xl font-bold text-gradient opacity-50">SS</div>
-                    <p className="text-sm text-muted-foreground mt-4">Profile Photo</p>
-                  </div>
-                </div>
+              <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden">
+                <img 
+                  src={profileHeadshot} 
+                  alt="Shreyansh Singh - Entrepreneur and Technologist" 
+                  className="w-full h-full object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
               </div>
 
               {/* Floating Badge */}
