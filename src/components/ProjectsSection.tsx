@@ -6,8 +6,7 @@ import {
   Rocket, 
   Sun, 
   Code, 
-  Users, 
-  Lightbulb,
+  PenTool,
   ArrowRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -20,6 +19,7 @@ const projects = [
     description: "A universal Agentic AI platform simplifying data management, automation, and decision-making across industries. Talk to your business data naturally.",
     tags: ["AI/ML", "Enterprise", "SaaS"],
     icon: Brain,
+    secondaryIcon: PenTool,
     featured: true,
     link: "#third-ai",
   },
@@ -76,9 +76,12 @@ export function ProjectsSection() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             Featured Work & Ventures
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-lg mb-4">
             Building impactful companies and products at the intersection of 
             AI, enterprise software, and sustainability.
+          </p>
+          <p className="text-primary font-medium text-lg">
+            Join me for next-gen innovation →
           </p>
         </motion.div>
 
@@ -98,8 +101,15 @@ export function ProjectsSection() {
               
               <div className="relative z-10">
                 <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                    <project.icon className="w-7 h-7 text-primary" />
+                  <div className="flex items-center gap-3">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                      <project.icon className="w-7 h-7 text-primary" />
+                    </div>
+                    {project.secondaryIcon && (
+                      <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300">
+                        <project.secondaryIcon className="w-5 h-5 text-accent" />
+                      </div>
+                    )}
                   </div>
                   <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-300" />
                 </div>
