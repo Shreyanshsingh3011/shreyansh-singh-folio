@@ -1,11 +1,17 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send, Linkedin, Mail, ArrowRight } from "lucide-react";
+import { Send, Linkedin, Mail, ArrowRight, Twitter, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+
+const socialLinks = [
+  { icon: Mail, label: "Email", href: "mailto:contact@shreyanshsingh.com", username: "contact@shreyanshsingh.com" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/shreyanshsingh", username: "shreyanshsingh" },
+  { icon: Twitter, label: "Twitter", href: "https://twitter.com/shreyanshsingh", username: "@shreyanshsingh" },
+];
 
 export function ContactSection() {
   const ref = useRef(null);
@@ -17,12 +23,11 @@ export function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     toast({
-      title: "Message sent",
-      description: "Thank you for reaching out. I'll get back to you soon.",
+      title: "Message sent!",
+      description: "Thanks for reaching out. I'll get back to you soon.",
     });
     
     setIsSubmitting(false);
@@ -41,57 +46,50 @@ export function ContactSection() {
           className="text-center mb-16"
         >
           <span className="text-primary text-sm font-medium tracking-wider uppercase mb-4 block">
-            Connect
+            Get in Touch
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Let's Build the Future
+            Let's Work Together
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Open to strategic partnerships, collaborations, and long-term 
-            investment conversations.
+            Whether it's a collaboration, partnership, investment opportunity, 
+            or just a conversation — I'd love to hear from you.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:col-span-3"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <Input 
-                    placeholder="Your Name" 
-                    required 
-                    className="bg-secondary/50 border-border/50 h-12"
-                  />
-                </div>
-                <div>
-                  <Input 
-                    type="email" 
-                    placeholder="Your Email" 
-                    required 
-                    className="bg-secondary/50 border-border/50 h-12"
-                  />
-                </div>
-              </div>
-              <div>
                 <Input 
-                  placeholder="Subject" 
+                  placeholder="Your Name" 
+                  required 
+                  className="bg-secondary/50 border-border/50 h-12"
+                />
+                <Input 
+                  type="email" 
+                  placeholder="Your Email" 
                   required 
                   className="bg-secondary/50 border-border/50 h-12"
                 />
               </div>
-              <div>
-                <Textarea 
-                  placeholder="Your Message" 
-                  required 
-                  rows={6}
-                  className="bg-secondary/50 border-border/50 resize-none"
-                />
-              </div>
+              <Input 
+                placeholder="Subject" 
+                required 
+                className="bg-secondary/50 border-border/50 h-12"
+              />
+              <Textarea 
+                placeholder="Tell me about your project or inquiry..." 
+                required 
+                rows={5}
+                className="bg-secondary/50 border-border/50 resize-none"
+              />
               <Button 
                 type="submit" 
                 variant="hero" 
@@ -111,57 +109,40 @@ export function ContactSection() {
             </form>
           </motion.div>
 
-          {/* Contact Info */}
+          {/* Social Links */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col justify-center"
+            className="lg:col-span-2 flex flex-col justify-center"
           >
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Direct Contact</h3>
-                <div className="space-y-4">
-                  <a 
-                    href="mailto:contact@shreyanshsingh.com"
-                    className="flex items-center gap-4 p-4 rounded-xl glass hover-glow group"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <Mail className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">Email</p>
-                      <p className="font-medium">contact@shreyanshsingh.com</p>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-muted-foreground ml-auto group-hover:text-primary transition-colors" />
-                  </a>
-                  
-                  <a 
-                    href="https://linkedin.com/in/shreyanshsingh"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-xl glass hover-glow group"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <Linkedin className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">LinkedIn</p>
-                      <p className="font-medium">Connect with me</p>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-muted-foreground ml-auto group-hover:text-primary transition-colors" />
-                  </a>
-                </div>
-              </div>
+            <h3 className="text-lg font-semibold mb-6">Connect With Me</h3>
+            <div className="space-y-3">
+              {socialLinks.map((link) => (
+                <a 
+                  key={link.label}
+                  href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  className="flex items-center gap-4 p-4 rounded-xl glass hover-glow group"
+                >
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <link.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm text-muted-foreground">{link.label}</p>
+                    <p className="text-sm font-medium truncate">{link.username}</p>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </a>
+              ))}
+            </div>
 
-              <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent border border-primary/20">
-                <h4 className="font-semibold mb-2">For Investment Inquiries</h4>
-                <p className="text-sm text-muted-foreground">
-                  Interested in Third AI or our clean energy initiatives? 
-                  I'm open to conversations with aligned investors focused on 
-                  long-term, impact-driven opportunities.
-                </p>
-              </div>
+            <div className="mt-8 p-5 rounded-xl bg-gradient-to-br from-primary/10 to-transparent border border-primary/20">
+              <p className="text-sm text-muted-foreground">
+                <span className="text-foreground font-medium">Open to:</span> Strategic 
+                partnerships, investment conversations, advisory roles, and speaking engagements.
+              </p>
             </div>
           </motion.div>
         </div>
