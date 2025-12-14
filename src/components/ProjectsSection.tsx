@@ -80,9 +80,12 @@ export function ProjectsSection() {
             Building impactful companies and products at the intersection of 
             AI, enterprise software, and sustainability.
           </p>
-          <p className="text-primary font-medium text-lg">
+          <a 
+            href="#contact" 
+            className="text-primary font-medium text-lg hover:underline transition-all inline-flex items-center gap-1"
+          >
             Join me for next-gen innovation →
-          </p>
+          </a>
         </motion.div>
 
         {/* Featured Projects */}
