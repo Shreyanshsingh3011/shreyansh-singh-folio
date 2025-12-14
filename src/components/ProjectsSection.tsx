@@ -31,7 +31,7 @@ const projects = [
     tags: ["Startup", "B2B", "Technology"],
     icon: Rocket,
     featured: true,
-    link: "#businesses",
+    link: "https://www.sthapanatechnologies.com",
   },
   {
     id: 3,
@@ -51,7 +51,7 @@ const projects = [
     tags: ["Software", "Enterprise", "Digital"],
     icon: Code,
     featured: false,
-    link: "#businesses",
+    link: "https://www.WapVenture.com",
   },
 ];
 
