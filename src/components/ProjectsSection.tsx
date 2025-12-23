@@ -7,7 +7,8 @@ import {
   Sun, 
   Code, 
   PenTool,
-  ArrowRight
+  ArrowRight,
+  Leaf
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -35,6 +36,16 @@ const projects = [
   },
   {
     id: 3,
+    title: "Stealth Clean Tech Innovation",
+    category: "Clean Tech",
+    description: "A stealth-mode venture developing breakthrough clean technology solutions for sustainable industrial transformation.",
+    tags: ["Clean Tech", "Innovation", "Stealth"],
+    icon: Leaf,
+    featured: false,
+    link: "#stealth",
+  },
+  {
+    id: 4,
     title: "Clean Energy Initiatives",
     category: "Sustainability",
     description: "Active involvement in solar and renewable energy projects, working towards making clean energy accessible and impactful globally.",
@@ -44,7 +55,7 @@ const projects = [
     link: "#vision",
   },
   {
-    id: 4,
+    id: 5,
     title: "Wapventure Solutions",
     category: "Digital Products",
     description: "Enterprise platforms and scalable technology solutions powering business transformation across industries.",
